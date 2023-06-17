@@ -6,7 +6,7 @@ import OrderItem from './src/components/OrderItem';
 export default function App() {
   return (
     <View style={styles.container}>
-      <OrderItem/>
+      {/* <OrderItem/> */}
       <StatusBar style="auto" />
     </View>
   );

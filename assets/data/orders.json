@@ -38,7 +38,7 @@
     "Restaurant": {
       "id": "7d7965f7-1b33-4b8c-9bac-0c22bc905030",
       "name": "Jacobs - DuBuque",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
+      "image": "https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg",
       "deliveryFee": 0.039448871531492236,
       "minDeliveryTime": 10,
       "maxDeliveryTime": 44,
@@ -70,7 +70,7 @@
     "Restaurant": {
       "id": "7d7965f7-1b33-4b8c-9bac-0c22bc905030",
       "name": "Jacobs - DuBuque",
-      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant1.jpeg",
+      "image": "https://notjustdev-dummy.s3.us-east-2.amazonaws.com/uber-eats/restaurant2.jpeg",
       "deliveryFee": 0.039448871531492236,
       "minDeliveryTime": 10,
       "maxDeliveryTime": 44,

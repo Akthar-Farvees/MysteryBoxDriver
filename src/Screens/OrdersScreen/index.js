@@ -13,7 +13,7 @@ const OrdersScreen = () => {
         <View style={{ flex: 1, backgroundColor: 'orange' }}>
             <BottomSheet ref={bottomSheetRef} snapPoints={snapPoints}>
                 <View style={{ marginBottom: 30, alignItems: 'center' }}>
-                    <Text style={{ fontSize: 20, fontWeight: '600', letterSpacing: 0.5, paddingBottom: 5 }}>You're Online</Text>
+                    <Text style={{ fontSize: 20, fontWeight: "600", letterSpacing: 0.5, paddingBottom: 5 }}>You're Online</Text>
                     <Text style={{ letterSpacing: 0.5, color: 'grey' }}>Available Nearby Orders: {orders.length}</Text>
                 </View>
                 <FlatList

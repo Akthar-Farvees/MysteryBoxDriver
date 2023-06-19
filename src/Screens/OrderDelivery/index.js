@@ -16,6 +16,8 @@ const order = orders[0]
 const OrderDelivery = () => {
 
     const [driverLocation, setDriverLocation] = useState();
+    const [totalMinutes, setTotalMinutes] = useState(0);
+    const [totalKm, setTotalKm] = useState(0);
 
     const bottomSheetRef = useRef(null);
 
@@ -59,21 +61,24 @@ const OrderDelivery = () => {
                     longitudeDelta: 0.7,
                 }}>
 
-                <MapViewDirections 
+                <MapViewDirections
                     origin={driverLocation}
-                    destination={{latitude: order.User.lat, longitude: order.User.lng}}
+                    destination={{ latitude: order.User.lat, longitude: order.User.lng }}
                     strokeWidth={12}
                     strokeColor="#f3cb00"
-                    waypoints={[{latitude: order.Restaurant.lat, longitude: order.Restaurant.lng}]}
+                    waypoints={[{ latitude: order.Restaurant.lat, longitude: order.Restaurant.lng }]}
                     apikey={"AIzaSyAZ5ZypfUXy_LSA4Ul4DTfg9t9hGWzaMts"}
-
+                    onReady={(result) => {
+                        setTotalMinutes(result.duration);
+                        setTotalKm(result.distance);
+                    }}
                 />
 
                 <Marker
                     coordinate={{ latitude: order.Restaurant.lat, longitude: order.Restaurant.lng, }}
                     title={order.Restaurant.name}
                     description={order.Restaurant.address}>
-                         <View style={{ backgroundColor: '#f3cb00', padding: 6, borderRadius: 20 }}>
+                    <View style={{ backgroundColor: '#f3cb00', padding: 6, borderRadius: 20 }}>
                         <Entypo name='shop' size={24} color="black" />
                     </View>
                 </Marker>
@@ -83,22 +88,22 @@ const OrderDelivery = () => {
                     title={order.User.name}
                     description={order.User.address}
                 >
-                                             <View style={{ backgroundColor: '#f3cb00', padding: 6, borderRadius: 20 }}>
+                    <View style={{ backgroundColor: '#f3cb00', padding: 6, borderRadius: 20 }}>
 
-                    <MaterialIcons name="restaurant" size={24} color="black"/>
-</View>                   
+                        <MaterialIcons name="restaurant" size={24} color="black" />
+                    </View>
                 </Marker>
             </MapView>
             <BottomSheet ref={bottomSheetRef} snapPoints={snapPoints} handleIndicatorStyle={styles.handleIndicatorStyle}>
                 <View style={styles.handleIndicatorContainer}>
-                    <Text style={styles.routeDetailsText}>14 min</Text>
+                    <Text style={styles.routeDetailsText}>{totalMinutes.toFixed(0)} min</Text>
                     <FontAwesome5
                         name='shopping-bag'
                         size={28}
                         color='#FFE030'
                         style={{ marginHorizontal: 10 }}
                     />
-                    <Text style={styles.routeDetailsText}>5Km</Text>
+                    <Text style={styles.routeDetailsText}>{totalKm.toFixed(2)} km</Text>
                 </View>
 
                 <View style={styles.deliveryDetailsContainer}>

@@ -34,7 +34,7 @@ const OrdersScreen = () => {
 
                         }} pinColor="red" >
                     <View style={{backgroundColor: '#f3cb00', padding: 6, borderRadius: 20}}>
-                         <Entypo name='shop' size={24} color="white"/>
+                         <Entypo name='shop' size={24} color="black"/>
                     </View>
                 </Marker>
     ))}

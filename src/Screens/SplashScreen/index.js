@@ -16,9 +16,27 @@ const SplashScreen = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={require('../../../assets/mystery.png')} style={styles.image} />
-        <Text style={{marginTop: 8, fontSize:22, fontWeight: "500"}}>
-          I'm a Driver
-        </Text>
+        <View style={{
+            // backgroundColor: '#FFE030',
+            padding: 10,
+            borderRadius: 10,
+            display: 'flex',
+            flexDirection: "row",
+            marginTop: 8, 
+          }}>
+
+      <Text style={{  fontSize: 22, padding: 4, fontWeight: "500",  }}>I'm a </Text>
+      <View style={{
+            backgroundColor: '#FFE030',
+            borderRadius: 5,
+            padding: 4,
+            display: 'flex',
+            flexDirection: "row",
+          }}>
+        <Text style={{fontSize: 22, fontWeight: "500" }} >Driver</Text>
+        </View>
+          </View>
+        
       </View>
 
       <View style={styles.footerContainer}>
@@ -44,15 +62,15 @@ const styles = StyleSheet.create({
     marginTop: 90,
   },
   image: {
-    width: 90,
-    height: 90,
+    width: 78,
+    height: 78,
   },
   footerContainer: {
     marginTop: 'auto',
     marginBottom: 35,
     marginVertical: 25,
     marginHorizontal: 80,
-    alignItems:'center',
+    alignItems: 'center',
   },
   footerText: {
     fontSize: 13,

@@ -1,13 +1,13 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container: { flex: 1, backgroundColor: 'red' },
+    container: { flex: 1, backgroundColor: 'black' },
 
     handleIndicatorStyle: { backgroundColor: 'grey', width: 100, },
 
     handleIndicatorContainer: { marginTop: 10, marginBottom: 20, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' },
 
-    routeDetailsText: { fontSize: 24, letterSpacing: 1, fontWeight: "550" },
+    routeDetailsText: { fontSize: 24, letterSpacing: 1, fontWeight: "500" },
 
     deliveryDetailsContainer: { paddingHorizontal: 20 },
 

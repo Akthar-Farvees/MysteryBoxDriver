@@ -1,34 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, FlatList } from 'react-native';
-import orders from './assets/data/orders.json';
-import OrdersScreen from './src/Screens/OrdersScreen';
+import { StyleSheet, View} from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import OrderDelivery from './src/Screens/OrderDelivery';
+import { NavigationContainer } from '@react-navigation/native';
+import Navigation from './src/Navigation';      
 
-const order = orders[0];
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
 
+        <GestureHandlerRootView style={{ flex: 1 }}>
+           <Navigation/>
+        </GestureHandlerRootView>
 
-      {/* <GestureHandlerRootView style={{ flex: 1 }}>
-        <OrdersScreen />
-      </GestureHandlerRootView> */}
-
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <OrderDelivery/>
-      </GestureHandlerRootView>
-
-      <StatusBar style="auto" />
-    </View>
+        <StatusBar style="auto" />
+     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-  },
-});
